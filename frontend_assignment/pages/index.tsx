@@ -48,6 +48,7 @@ export default function Home() {
 			greet: "",
 		},
 		onSubmit: (values) => {
+			console.log(values);
 			greet(values.greet);
 		},
 		validationSchema: GreetingSchema,
@@ -110,7 +111,6 @@ export default function Home() {
 		if (response.status === 500) {
 			const errorMessage = await response.text();
 			setLogs(errorMessage);
-		} else {
 		}
 	}
 
