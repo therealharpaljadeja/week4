@@ -15,8 +15,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const contractOwner = contract.connect(provider.getSigner())
 
     try {
-        await contractOwner.greet(utils.formatBytes32String(greeting), nullifierHash, solidityProof)
-
+        let tx = await contractOwner.greet(utils.formatBytes32String(greeting), nullifierHash, solidityProof)
+        let receipt = await tx.wait();
+        console.log(receipt);
         res.status(200).end()
     } catch (error: any) {
         const { message } = JSON.parse(error.body).error
