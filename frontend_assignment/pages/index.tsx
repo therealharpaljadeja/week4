@@ -158,7 +158,7 @@ export default function Home() {
 							</FormErrorMessage>
 						</FormControl>
 						<FormControl
-							isInvalid={formik.errors.name !== undefined}>
+							isInvalid={formik.errors.age !== undefined}>
 							<FormLabel htmlFor='age'>Age</FormLabel>
 							<Input
 								id='age'
@@ -173,7 +173,7 @@ export default function Home() {
 							</FormErrorMessage>
 						</FormControl>
 						<FormControl
-							isInvalid={formik.errors.name !== undefined}>
+							isInvalid={formik.errors.address !== undefined}>
 							<FormLabel>Address</FormLabel>
 							<Textarea
 								onChange={formik.handleChange}
